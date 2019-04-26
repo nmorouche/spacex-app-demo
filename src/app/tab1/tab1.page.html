@@ -1,11 +1,20 @@
 <ion-header>
-    <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content padding>
-    My first tab content
-  </ion-content>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tab 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  My first tab content
+  <ion-list *ngFor="let r of rockets">
+    <ion-item>
+      <ion-label>
+        {{ r.rocket_name }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <pre>{{ rockets | json }}</pre>
+</ion-content>

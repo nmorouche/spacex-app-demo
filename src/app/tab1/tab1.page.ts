@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RocketService } from '../services/rocket.service';
+import { Rocket } from '../Models/rocket.model';
 
 @Component({
   selector: 'app-tab1',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab1.page.scss'],
 })
 export class Tab1Page implements OnInit {
+  rockets: Rocket[];
 
-  constructor() { }
+  constructor(private rocketService: RocketService) { }
 
   ngOnInit() {
+    this.rocketService.getRockets().subscribe(result => {
+      this.rockets = result;
+    });
   }
 
 }

@@ -27,7 +27,7 @@ export class MenuPage implements OnInit {
       if(event && event.url){
         this.selectedPath = event.url;
       }
-    })
+    });
    }
 
   ngOnInit() {
