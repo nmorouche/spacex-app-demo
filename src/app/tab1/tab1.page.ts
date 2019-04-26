@@ -22,6 +22,10 @@ export class Tab1Page implements OnInit {
     setTimeout(() => {
       this.observableRockets = this.rocketService.getRockets();
     },
-      5000);
+      2000);
+  }
+
+  buttonClick(rocketId: string) {
+    console.log(rocketId);
   }
 }
