@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RocketService } from '../services/rocket.service';
 import { Rocket } from '../Models/rocket.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tab1',
@@ -9,13 +10,22 @@ import { Rocket } from '../Models/rocket.model';
 })
 export class Tab1Page implements OnInit {
   rockets: Rocket[];
+  observableRockets: Observable<Rocket[]>;
 
   constructor(private rocketService: RocketService) { }
 
   ngOnInit() {
-    this.rocketService.getRockets().subscribe(result => {
-      this.rockets = result;
-    });
+    // this.rocketService.getRockets().subscribe(result => {
+    //   this.rockets = result;
+    // });
+
+    setTimeout(() => {
+      this.observableRockets = this.rocketService.getRockets();
+    },
+      2000);
   }
 
+  buttonClick(rocketId: string) {
+    console.log(rocketId);
+  }
 }
