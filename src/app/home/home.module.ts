@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { SkeletonComponent } from '../components/skeleton/skeleton.component';
+import { ComponentsModule } from '../modules/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild([
       {
         path: '',
@@ -19,9 +20,6 @@ import { SkeletonComponent } from '../components/skeleton/skeleton.component';
       }
     ])
   ],
-  declarations: [
-    HomePage,
-    SkeletonComponent
-  ]
+  declarations: [HomePage]
 })
 export class HomePageModule { }

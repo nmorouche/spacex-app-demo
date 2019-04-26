@@ -7,14 +7,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  My first tab content
-  <ion-list *ngFor="let r of rockets">
+  <app-skeleton *ngIf="!observableRockets"></app-skeleton>
+  <ion-list  *ngFor="let r of observableRockets | async">
     <ion-item>
       <ion-label>
         {{ r.rocket_name }}
       </ion-label>
     </ion-item>
   </ion-list>
-
-  <pre>{{ rockets | json }}</pre>
+  <!-- <pre>{{ rockets | json }}</pre> -->
 </ion-content>
