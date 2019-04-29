@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MenuPage } from './menu.page';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 const routes: Routes = [
   {
@@ -38,6 +40,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule,
     RouterModule.forChild(routes)
   ],
   declarations: [MenuPage]
