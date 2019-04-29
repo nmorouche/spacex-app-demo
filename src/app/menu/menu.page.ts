@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
+import { NgProgress } from '@ngx-progressbar/core';
 
 @Component({
   selector: 'app-menu',
@@ -22,15 +23,24 @@ export class MenuPage implements OnInit {
       url: '/menu/second'
     }
   ];
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public progress: NgProgress
+  ) {
     this.router.events.subscribe((event: RouterEvent) => {
-      if(event && event.url){
+      if (event && event.url) {
         this.selectedPath = event.url;
       }
     });
-   }
+  }
 
   ngOnInit() {
+    this.progress.start();
+
+    setTimeout(() => {
+      /** progress ends after 2 seconds */
+      this.progress.done();
+    }, 10000);
   }
 
 }
