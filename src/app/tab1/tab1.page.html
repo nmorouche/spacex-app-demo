@@ -9,26 +9,29 @@
 <ion-content>
 
   <!-- <app-skeleton *ngIf="!observableRockets"></app-skeleton>
-  <ion-list>
-    <ion-item *ngFor="let r of observableRockets | async" [ngClass]="{'active': r.active, 'inactive': !r.active}"
-      class="ion-activatable" (click)="buttonClick(r.id)">
-      <ion-ripple-effect></ion-ripple-effect>
-      <ion-label>
-        {{ r.rocket_name }}
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
+    <ion-list>
+      <ion-item *ngFor="let r of observableRockets | async" [ngClass]="{'active': r.active, 'inactive': !r.active}"
+        class="ion-activatable" (click)="buttonClick(r.id)">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-label>
+          {{ r.rocket_name }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div> -->
 
   <app-skeleton *ngIf="!rockets"></app-skeleton>
-  <ion-list>
-    <ion-item *ngFor="let r of rockets" [ngClass]="{'active': r.active, 'inactive': !r.active}"
-      class="ion-activatable" (click)="buttonClick(r.id)">
-      <ion-ripple-effect></ion-ripple-effect>
-      <ion-label>
-        {{ r.rocket_name }}
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <div [@fadeIn] *ngIf="rockets">
+    <ion-list padding>
+      <ion-item *ngFor="let r of rockets" [ngClass]="{'active': r.active, 'inactive': !r.active}"
+        class="ion-activatable" (click)="buttonClick(r.id)">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-label>
+          {{ r.rocket_name }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 
   <ion-item-group class="mt-5">
     <ion-item-divider>
@@ -67,7 +70,7 @@
     </ion-item-sliding>
 
     <ion-item-sliding>
-      <ion-item href="#">
+      <ion-item>
         <ion-label>
           <h2>HubStruck Notifications</h2>
           <p>A new message in your network</p>
