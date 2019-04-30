@@ -40,8 +40,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    NgProgressModule.forRoot(),
-    NgProgressHttpClientModule,
     RouterModule.forChild(routes)
   ],
   declarations: [MenuPage]
