@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RocketService } from '../services/rocket.service';
+import { RocketService } from '../services/rocket/rocket.service';
 import { Rocket } from '../Models/rocket.model';
 import { Observable } from 'rxjs';
-import { NgProgress } from '@ngx-progressbar/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
