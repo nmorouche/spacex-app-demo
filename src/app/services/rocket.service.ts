@@ -19,7 +19,6 @@ export class RocketService {
     return this.http.get<Rocket[]>(requestEndpoint).pipe(
       // finalize(() => this.loader.stop()),
       map(rockets => {
-        console.log(rockets);
         return rockets;
       })
     );

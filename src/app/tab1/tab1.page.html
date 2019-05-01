@@ -23,7 +23,7 @@
   <app-skeleton *ngIf="!rockets"></app-skeleton>
   <div [@fadeIn] *ngIf="rockets">
     <ion-list padding>
-      <ion-item *ngFor="let r of rockets" [ngClass]="{'active': r.active, 'inactive': !r.active}"
+      <ion-item *ngFor="let r of rockets"
         class="ion-activatable" (click)="buttonClick(r.id)">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-label>

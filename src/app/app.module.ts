@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { Network } from '@ionic-native/network/ngx';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     NgProgressHttpClientModule
   ],
   providers: [
+    Network,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
