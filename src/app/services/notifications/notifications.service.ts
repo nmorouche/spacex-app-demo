@@ -24,7 +24,7 @@ export class NotificationsService {
 
                 // Initialize your VAPI key
                 messaging.usePublicVapidKey(
-                    environment.firebase.vapidKey
+                    environment.firebaseConfig.vapidKey
                 );
 
                 // Optional and not covered in the article

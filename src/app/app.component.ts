@@ -43,7 +43,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     this.initializeNetworkEvents();
     console.log(environment);
-    firebase.initializeApp(environment.firebase);
+    firebase.initializeApp(environment.firebaseConfig);
     await this.notificationsService.init();
   }
 

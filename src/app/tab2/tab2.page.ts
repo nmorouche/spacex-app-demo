@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LaunchesService } from '../services/spacex-api/launches.service';
-import { Launch } from '../models/mission.model';
+import { Launch } from '../models/launch.model';
 
 @Component({
   selector: 'app-tab2',
