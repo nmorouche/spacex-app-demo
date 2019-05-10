@@ -10,20 +10,20 @@ import { NgProgress } from '@ngx-progressbar/core';
 export class MenuPage implements OnInit {
   selectedPath: string;
   pages = [
+        {
+      title: 'Demo',
+      url: '/menu/first',
+      activated: true
+    },
     {
       title: 'Home',
       url: '/menu/home',
-      activated: false
-    },
-    {
-      title: 'First Page with Tabs',
-      url: '/menu/first',
       activated: true
     },
     {
       title: 'Second Page blank',
       url: '/menu/second',
-      activated: false
+      activated: true
     }
   ];
   constructor(private router: Router) {

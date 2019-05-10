@@ -10,7 +10,14 @@ import { SecondPage } from './second.page';
 const routes: Routes = [
   {
     path: '',
-    component: SecondPage
+    component: SecondPage,
+    children: [
+      {
+        path: 'home',
+        loadChildren: '../home/home.module#HomePageModule'
+
+      }
+    ]
   }
 ];
 
