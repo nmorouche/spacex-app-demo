@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Rocket } from '../Models/rocket.model';
 import { Observable } from 'rxjs';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { RocketsService } from '../services/spacex-api/rockets.service';
+import { Rocket } from '../models/launch.model';
 
 @Component({
   selector: 'app-tab1',
