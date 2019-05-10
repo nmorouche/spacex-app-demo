@@ -8,7 +8,7 @@ import { Launch } from '../models/mission.model';
   styleUrls: ['./tab2.page.scss'],
 })
 export class Tab2Page implements OnInit {
-  private launches: Launch[];
+  launches: Launch[];
 
   constructor(private launchesService: LaunchesService) { }
 
