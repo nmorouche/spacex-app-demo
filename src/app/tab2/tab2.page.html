@@ -7,14 +7,30 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  My second tab content
-  <!-- Default Progressbar -->
-  <ion-progress-bar class="mt-3" type="indeterminate" color="tertiary"></ion-progress-bar>
-
-  <!-- Colorize Progressbar -->
+  <app-skeleton *ngIf="!launches"></app-skeleton>
+  <!-- <ion-progress-bar class="mt-3" type="indeterminate" color="tertiary"></ion-progress-bar>
   <ion-progress-bar class="mt-3" color="secondary" value="0.5"></ion-progress-bar>
-
-  <!-- Other types -->
-  <ion-progress-bar class="mt-3" value="0.25"  buffer="0.5"></ion-progress-bar>
-  <!-- <pre>{{rockets | json }}</pre> -->
+  <ion-progress-bar class="mt-3" value="0.25"  buffer="0.5"></ion-progress-bar> -->
+  <!-- <pre>{{launches | json}}</pre> -->
+    
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+  <ion-list padding>
+    <ion-item *ngFor="let l of launches" class="ion-activatable">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-thumbnail slot="start">
+          <ion-skeleton-text *ngIf="!l.links.mission_patch"></ion-skeleton-text>
+          <img *ngIf="l.links.mission_patch" [src]="l.links.mission_patch">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{l.mission_name}}</h2>
+        <p>{{l.launch_site.site_name_long}}</p>
+        <p>{{l.rocket.rocket_name}}</p>
+      </ion-label>
+      <ion-note slot="end">
+        {{l.launch_year}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -12,15 +12,18 @@ export class MenuPage implements OnInit {
   pages = [
     {
       title: 'Home',
-      url: '/menu/home'
+      url: '/menu/home',
+      activated: false
     },
     {
       title: 'First Page with Tabs',
-      url: '/menu/first'
+      url: '/menu/first',
+      activated: true
     },
     {
       title: 'Second Page blank',
-      url: '/menu/second'
+      url: '/menu/second',
+      activated: false
     }
   ];
   constructor(private router: Router) {

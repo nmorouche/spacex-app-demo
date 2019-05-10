@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LaunchesService } from '../services/spacex-api/launches.service';
+import { Launch } from '../models/mission.model';
 
 @Component({
   selector: 'app-tab2',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab2.page.scss'],
 })
 export class Tab2Page implements OnInit {
+  private launches: Launch[];
 
-  constructor() { }
+  constructor(private launchesService: LaunchesService) { }
 
   ngOnInit() {
+    this.launchesService.getAllLaunches().subscribe(result => {
+      this.launches = result;
+    });
+  }
+  doRefresh(event: any) {
+    this.launchesService.getAllLaunches().subscribe(result => {
+      this.launches = result;
+      event.target.complete();
+    });
   }
 
 }
