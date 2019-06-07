@@ -3,12 +3,13 @@
 
 /** Ionic CSS Variables **/
 :root {
-  --ion-font-family: 'DinoFont';
-  
-  --ion-background-color: #303030;
-  --ion-text-color: #ffffff;
+  --ion-font-family: 'Roboto';
+  font-size: 80%;
+
+  // --ion-background-color: #303030;
+  // --ion-text-color: #ffffff;
   pre {
-    color: #ffffff;
+    // color: #ffffff;
     font-family: 'DinoFont';
     font-size: 80%;
    }
@@ -16,6 +17,7 @@
   // ion-content{
   //   --ion-background-color:#303030
   // }
+
    /** primary **/
    --ion-color-primary: #303F9F;
    --ion-color-primary-rgb: 48,63,159;

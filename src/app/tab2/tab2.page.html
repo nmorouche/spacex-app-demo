@@ -12,16 +12,16 @@
   <ion-progress-bar class="mt-3" color="secondary" value="0.5"></ion-progress-bar>
   <ion-progress-bar class="mt-3" value="0.25"  buffer="0.5"></ion-progress-bar> -->
   <!-- <pre>{{launches | json}}</pre> -->
-    
-      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-      </ion-refresher>
-  <ion-list padding>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
     <ion-item *ngFor="let l of launches" class="ion-activatable">
       <ion-ripple-effect></ion-ripple-effect>
       <ion-thumbnail slot="start">
-          <ion-skeleton-text *ngIf="!l.links.mission_patch"></ion-skeleton-text>
-          <img *ngIf="l.links.mission_patch" [src]="l.links.mission_patch">
+        <ion-skeleton-text *ngIf="!l.links.mission_patch"></ion-skeleton-text>
+        <img *ngIf="l.links.mission_patch" [src]="l.links.mission_patch">
       </ion-thumbnail>
       <ion-label>
         <h2>{{l.mission_name}}</h2>

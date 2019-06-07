@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { finalize, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Rocket } from 'src/app/models/launch.model';
 
@@ -17,7 +17,6 @@ export class RocketsService {
   getRockets(): Observable<Rocket[]> {
     const requestEndpoint = this.apiBaseUrl + 'rockets';
     return this.http.get<Rocket[]>(requestEndpoint).pipe(
-      // finalize(() => this.loader.stop()),
       map(rockets => {
         console.log(rockets);
         return rockets;
