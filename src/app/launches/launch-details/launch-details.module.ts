@@ -5,24 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UpcomingLaunchesPage } from './upcoming-launches.page';
-import { ComponentsModule } from 'src/app/modules/components/components.module';
+import { LaunchDetailsPage } from './launch-details.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: UpcomingLaunchesPage
+    path: 'launches/:id',
+    component: LaunchDetailsPage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    ComponentsModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [UpcomingLaunchesPage]
+  declarations: [LaunchDetailsPage]
 })
-export class UpcomingLaunchesPageModule {}
+export class LaunchDetailsPageModule {}

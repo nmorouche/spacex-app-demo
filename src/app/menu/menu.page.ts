@@ -20,11 +20,11 @@ export class MenuPage implements OnInit {
       url: '/menu/first',
       activated: true
     },
-    // {
-    //   title: 'Demo',
-    //   url: '/menu/first',
-    //   activated: true
-    // },
+    {
+      title: 'Demo',
+      url: '/menu/first',
+      activated: true
+    },
     // {
     //   title: 'Home',
     //   url: '/menu/home',

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Launch } from 'src/app/models/launch.model';
+import { LaunchesService } from 'src/app/services/spacex-api/launches.service';
 
 @Component({
   selector: 'app-upcoming-launches',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upcoming-launches.page.scss'],
 })
 export class UpcomingLaunchesPage implements OnInit {
-
-  constructor() { }
+  launches: Launch[];
+  constructor(private launchesService: LaunchesService) { }
 
   ngOnInit() {
+    this.launchesService.getUpcomingLaunches().subscribe(result => {
+      this.launches = result;
+    });
+  }
+  doRefresh(event: any) {
+    this.launchesService.getUpcomingLaunches().subscribe(result => {
+      this.launches = result;
+      event.target.complete();
+    });
   }
 
 }

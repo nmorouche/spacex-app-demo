@@ -22,4 +22,23 @@ export class LaunchesService {
       })
     );
   }
+
+  getPastLaunches(): Observable<Launch[]> {
+    const requestEndpoint = this.apiBaseUrl + 'launches/past?order=desc';
+    return this.http.get<Launch[]>(requestEndpoint).pipe(
+      map(missions => {
+        return missions;
+      })
+    );
+  }
+
+  getUpcomingLaunches(): Observable<Launch[]> {
+    const requestEndpoint = this.apiBaseUrl + 'launches/upcoming?order=desc';
+    return this.http.get<Launch[]>(requestEndpoint).pipe(
+      map(missions => {
+        return missions;
+      })
+    );
+  }
+
 }

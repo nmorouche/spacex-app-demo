@@ -14,11 +14,15 @@ const routes: Routes = [
     children: [
       {
         path: 'upcoming',
-        loadChildren: './launches/upcoming-launches/upcoming-launches.module#UpcomingLaunchesPageModule'
+        loadChildren: './upcoming-launches/upcoming-launches.module#UpcomingLaunchesPageModule'
       },
       {
         path: 'past',
-        loadChildren: './launches/past-launches/past-launches.module#PastLaunchesPageModule'
+        loadChildren: './past-launches/past-launches.module#PastLaunchesPageModule'
+      },
+      {
+        path: ':id',
+        loadChildren: './launch-details/launch-details.module#LaunchDetailsPageModule'
       }
     ]
   },

@@ -27,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: 'launches',
-        loadChildren: './launches/launches.module#LaunchesPageModule'
+        loadChildren: '../launches/launches.module#LaunchesPageModule'
       },
       {
         path: 'second/details',

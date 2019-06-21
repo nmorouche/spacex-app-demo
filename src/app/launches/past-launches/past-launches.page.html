@@ -7,6 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <app-skeleton *ngIf="!launches"></app-skeleton>
+  <app-launch [launches]="launches"></app-launch>
 </ion-content>
