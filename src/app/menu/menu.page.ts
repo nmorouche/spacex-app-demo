@@ -10,22 +10,33 @@ import { NgProgress } from '@ngx-progressbar/core';
 export class MenuPage implements OnInit {
   selectedPath: string;
   pages = [
-        {
-      title: 'Demo',
+    {
+      title: 'Launches',
+      url: '/menu/launches',
+      activated: true
+    },
+    {
+      title: 'Missions',
       url: '/menu/first',
       activated: true
     },
-    {
-      title: 'Home',
-      url: '/menu/home',
-      activated: true
-    },
-    {
-      title: 'Second Page blank',
-      url: '/menu/second',
-      activated: true
-    }
+    // {
+    //   title: 'Demo',
+    //   url: '/menu/first',
+    //   activated: true
+    // },
+    // {
+    //   title: 'Home',
+    //   url: '/menu/home',
+    //   activated: true
+    // },
+    // {
+    //   title: 'Second Page blank',
+    //   url: '/menu/second',
+    //   activated: true
+    // }
   ];
+
   constructor(private router: Router) {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event && event.url) {

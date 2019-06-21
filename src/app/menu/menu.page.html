@@ -11,23 +11,24 @@
           <ion-item *ngIf="p.activated" [routerLink]="p.url" routerDirection="root"
             [class.active-item]="selectedPath.startsWith(p.url)">
             <ion-label>
-              <ion-icon name="quote" slot="start"></ion-icon>
+              <!-- <ion-icon name="quote" slot="start"></ion-icon> -->
               {{ p.title }}
             </ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
 
-      <ion-list class="fixed-bottom">
+      <div class="fixed-bottom">
         <ion-item tappable routerLink="/login" routerDirection="root">
-          <ion-icon name="close" slot="start"></ion-icon>
+          <!-- <ion-icon name="close" slot="start"></ion-icon> -->
           Logout
         </ion-item>
         <ion-item tappable>
-          <ion-icon name="settings" slot="start"></ion-icon>
-          settings
+          <ion-label>
+            <div>settings</div>
+          </ion-label>
         </ion-item>
-      </ion-list>
+      </div>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="content" main>

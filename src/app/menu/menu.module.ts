@@ -26,6 +26,10 @@ const routes: Routes = [
         loadChildren: '../second/second.module#SecondPageModule'
       },
       {
+        path: 'launches',
+        loadChildren: './launches/launches.module#LaunchesPageModule'
+      },
+      {
         path: 'second/details',
         loadChildren: '../details/details.module#DetailsPageModule'
       }
