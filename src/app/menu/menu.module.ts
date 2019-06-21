@@ -30,6 +30,10 @@ const routes: Routes = [
         loadChildren: '../launches/launches.module#LaunchesPageModule'
       },
       {
+        path: 'missions',
+        loadChildren: '../missions/missions.module#MissionsPageModule'
+      },
+      {
         path: 'second/details',
         loadChildren: '../details/details.module#DetailsPageModule'
       }
