@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./skeleton-loader.component.scss'],
 })
 export class SkeletonLoaderComponent implements OnInit {
-  @Input() size: number;
+  @Input() items: number;
+  @Input() text: number;
   @Input() animated: boolean;
   constructor() { }
 

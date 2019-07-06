@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot=start>
-      <ion-button  shape="round" (click)="goBack()">
+      <ion-button shape="round" (click)="goBack()">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>details</ion-title>
+    <ion-title>{{missionName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ng-container *ngIf="launch$ | async as launch; else loading">
+    <ngx-json-viewer [json]="launch"></ngx-json-viewer>
+  </ng-container>
 </ion-content>

@@ -8,5 +8,42 @@
 </ion-header>
 
 <ion-content>
-  <app-skeleton-loader [size]=10></app-skeleton-loader>
+  <ng-container *ngIf="nextLaunch$ | async as launch; else loading">
+
+    <ion-card button [routerLink]="['/launches', launch.flight_number]"
+      routerDirection="forward">
+      <ion-card-header>
+        <ion-card-subtitle>{{launch.launch_date_utc | date:'fullDate'}}</ion-card-subtitle>
+        <ion-card-title>{{launch.mission_name}}</ion-card-title>
+        <ion-note color="secondary">{{launch.launch_site.site_name_long}}</ion-note>x
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{launch.details}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
 </ion-content>
+
+<ng-template #loading>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-skeleton-text style="width: 20%"></ion-skeleton-text>
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-skeleton-text style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text style="width: 40%"></ion-skeleton-text>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text></ion-skeleton-text>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ng-template>

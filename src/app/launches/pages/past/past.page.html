@@ -7,6 +7,44 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<app-skeleton-loader></app-skeleton-loader>
+<ion-content padding>
+  <ng-container>
+    <ion-list>
+      <ion-item-sliding *ngFor="let l of pastLaunches$ | async as launches">
+        <ion-item-options side="start">
+          <ion-item-option>Favorite</ion-item-option>
+        </ion-item-options>
+        <ion-item [routerLink]="['/launches/', l.flight_number]" routerDirection="forward">
+          <ion-thumbnail slot="start">
+            <ion-text *ngIf="!l.links.mission_patch" class="underline-magical">{{l.flight_number}}</ion-text>
+            <img *ngIf="l.links.mission_patch" [src]="l.links.mission_patch">
+          </ion-thumbnail>
+          <ion-label class="d-inline">
+            <h2>{{l.mission_name}}</h2>
+            <p>{{l.launch_site.site_name}}</p>
+            <p>{{l.rocket.rocket_name}}</p>
+          </ion-label>
+          <ion-note slot="end">
+            <!-- <div class="d-flex flex-column">
+              {{l.launch_date_utc | date : 'short'}}
+            </div> -->
+            <ion-row>
+                <ion-col>
+                  ion-col
+                </ion-col>
+                <ion-col>
+                  ion-col
+                </ion-col>
+                <ion-col>
+                  ion-col
+                </ion-col>
+                <ion-col>
+                  ion-col
+                </ion-col>
+              </ion-row>
+          </ion-note>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ng-container>
 </ion-content>

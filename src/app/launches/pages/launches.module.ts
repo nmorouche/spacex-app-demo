@@ -45,6 +45,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [LaunchesPage]
+  declarations: [LaunchesPage],
 })
 export class LaunchesPageModule { }

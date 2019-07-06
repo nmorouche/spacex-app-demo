@@ -1,23 +1,23 @@
-<div class="ion-padding">
-  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 60%"></ion-skeleton-text>
-  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 80%"></ion-skeleton-text>
-  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 80%"></ion-skeleton-text>
-  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 80%"></ion-skeleton-text>
-</div>
+<ng-container class="ion-padding" *ngFor="let dummy of ' '.repeat(text).split(''), let x = index">
+  <ion-skeleton-text [attr.animated]="animated ? 'true' : null" style="width: 80%"></ion-skeleton-text>
+  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"></ion-skeleton-text>
+  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"></ion-skeleton-text>
+  <ion-skeleton-text [attr.animated]="animated ? 'true' : null"></ion-skeleton-text>
+</ng-container>
 
 <ion-list>
-  <ion-item *ngFor="let dummy of ' '.repeat(size).split(''), let x = index">
+  <ion-item *ngFor="let dummy of ' '.repeat(items).split(''), let x = index">
     <ion-thumbnail slot="start">
-      <ion-skeleton-text [attr.animated]="animated ? 'true' : null" ></ion-skeleton-text>
+      <ion-skeleton-text [attr.animated]="animated ? 'true' : null"></ion-skeleton-text>
     </ion-thumbnail>
     <ion-label>
       <h3>
         <ion-skeleton-text [attr.animated]="animated ? 'true' : null" style="width: 50%"></ion-skeleton-text>
       </h3>
       <p>
-        <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 80%"></ion-skeleton-text>
-        <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 80%"></ion-skeleton-text>
-        <ion-skeleton-text [attr.animated]="animated ? 'true' : null"  style="width: 80%"></ion-skeleton-text>
+        <ion-skeleton-text [attr.animated]="animated ? 'true' : null" style="width: 80%"></ion-skeleton-text>
+        <ion-skeleton-text [attr.animated]="animated ? 'true' : null" style="width: 80%"></ion-skeleton-text>
+        <ion-skeleton-text [attr.animated]="animated ? 'true' : null" style="width: 80%"></ion-skeleton-text>
       </p>
     </ion-label>
   </ion-item>

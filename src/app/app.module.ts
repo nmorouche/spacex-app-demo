@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/components/shared.module';
 
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,6 +22,13 @@ import { SharedModule } from './shared/components/shared.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
+    NgProgressModule.withConfig({
+        thick: true,
+        color: '#FFC107'
+      }
+    ),
+    NgProgressHttpModule,
     SharedModule
   ],
   providers: [

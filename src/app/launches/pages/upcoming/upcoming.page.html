@@ -7,21 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card button [routerLink] = "['/launches', '55FRED']">
-        <ion-card-header>
-          <ion-card-subtitle>
-            <ion-skeleton-text style="width: 10%"></ion-skeleton-text>
-          </ion-card-subtitle>
-          <ion-card-title>
-            <ion-skeleton-text style="width: 5%"></ion-skeleton-text>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>
-            <ion-skeleton-text></ion-skeleton-text>
-            <ion-skeleton-text></ion-skeleton-text>
-          </p>
-        </ion-card-content>
-      </ion-card>
+<ion-content padding>
+  <ng-container *ngIf="upcomingLaunches$ | async as launches; else loading">
+    <ngx-json-viewer [json]="launches"></ngx-json-viewer>
+  </ng-container>
 </ion-content>
+
+<ng-template #loading>
+  <app-skeleton-loader [text]=10></app-skeleton-loader>
+</ng-template>

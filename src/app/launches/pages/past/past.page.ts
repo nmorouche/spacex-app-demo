@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { LaunchesService } from '../../services/launches.service';
+import { Launch } from '../../Models/Launch';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-past',
   templateUrl: './past.page.html',
   styleUrls: ['./past.page.scss'],
 })
-export class PastPage implements OnInit {
+export class PastPage implements OnInit, AfterViewInit {
+  pastLaunches$: Observable<Launch[]>;
 
-  constructor() { }
+  constructor(private launchesService: LaunchesService) { }
 
   ngOnInit() {
   }
 
+  ngAfterViewInit(): void {
+    this.pastLaunches$ = this.launchesService.getPastLaunches()
+  }
 }

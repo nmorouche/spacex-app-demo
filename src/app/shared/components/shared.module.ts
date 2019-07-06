@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.compo
   imports: [
     RouterModule,
     CommonModule,
-    IonicModule,
+    IonicModule
   ],
   exports: [
     SkeletonLoaderComponent
