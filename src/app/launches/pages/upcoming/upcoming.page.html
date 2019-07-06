@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Upcoming launches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card button [routerLink] = "['/launches', '55FRED']">
+        <ion-card-header>
+          <ion-card-subtitle>
+            <ion-skeleton-text style="width: 10%"></ion-skeleton-text>
+          </ion-card-subtitle>
+          <ion-card-title>
+            <ion-skeleton-text style="width: 5%"></ion-skeleton-text>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            <ion-skeleton-text></ion-skeleton-text>
+            <ion-skeleton-text></ion-skeleton-text>
+          </p>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

@@ -1,22 +1,53 @@
 <ion-app>
+  <!-- when=false -->
   <ion-split-pane>
     <ion-menu type="overlay">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="primary">
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
+        <div *ngIf="false">
+            <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>
+                    <ion-skeleton-text style="width: 5%"></ion-skeleton-text>
+                  </ion-card-subtitle>
+                  <ion-card-title>
+                    <ion-skeleton-text style="width: 20%"></ion-skeleton-text>
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p>
+                    <ion-skeleton-text></ion-skeleton-text>
+                    <ion-skeleton-text></ion-skeleton-text>
+                    <ion-skeleton-text></ion-skeleton-text>
+                  </p>
+                </ion-card-content>
+              </ion-card>
+        </div>
         <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+            <ion-item [routerLink]="[p.url]" routerDirection="root"
+              [class.active-menu-item]="selectedPath?.startsWith(p.url) || (selectedPath === '/' && p.url.startsWith('/launches'))">
               <ion-label>
-                {{p.title}}
+                {{ p.title }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
+
+        <div class="fixed-bottom">
+          <ion-item tappable routerLink="/list" routerDirection="root">
+            Settings
+          </ion-item>
+          <ion-item tappable>
+            <ion-label>
+              About
+            </ion-label>
+          </ion-item>
+        </div>
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
