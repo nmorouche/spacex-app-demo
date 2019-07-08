@@ -3,16 +3,25 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Upcoming launches</ion-title>
+    <ion-title>Upcoming launches
+      <ion-badge *ngIf="upcomingLaunches$ | async as launches" color="tertiary">{{launches.length}}</ion-badge>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ng-container *ngIf="upcomingLaunches$ | async as launches; else loading">
-    <ngx-json-viewer [json]="launches"></ngx-json-viewer>
-  </ng-container>
+  <div *ngIf="upcomingLaunches$ | async as launches; else loading">
+    <div *ngFor="let launch of launches">
+      <ion-item-divider color="success" sticky="true">
+        <ion-label>
+          {{launch.mission_name}}
+        </ion-label>
+      </ion-item-divider>
+      <ngx-json-viewer [json]="launch" [expanded]="false"></ngx-json-viewer>
+    </div>
+  </div>
 </ion-content>
 
 <ng-template #loading>
-  <app-skeleton-loader [text]=10></app-skeleton-loader>
+  <app-skeleton-loader [text]=20></app-skeleton-loader>
 </ng-template>

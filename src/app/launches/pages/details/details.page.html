@@ -5,12 +5,12 @@
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>{{missionName}}</ion-title>
+    <ion-title>{{launch.mission_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ng-container *ngIf="launch$ | async as launch; else loading">
-    <ngx-json-viewer [json]="launch"></ngx-json-viewer>
+  <ng-container *ngIf="launch">
+    <ngx-json-viewer [json]="launch" [expanded]="false"></ngx-json-viewer>
   </ng-container>
 </ion-content>

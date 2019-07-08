@@ -11,21 +11,17 @@ import { LaunchesService } from '../../services/launches.service';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit, AfterViewInit {
-  launch$: Observable<Launch>;
+  launch: Launch;
   missionName: string;
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
-    private launchesService: LaunchesService) {
+    private location: Location) {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const flightNumber = params.get('id');
-      this.launch$ = this.launchesService.getLaunch(flightNumber);
-      this.launch$.subscribe(launch => this.missionName = launch.mission_name);
-    });
+    console.log(this.route.snapshot);
+    this.launch =  this.route.snapshot.data.launch;
   }
 
   ngAfterViewInit(): void {
