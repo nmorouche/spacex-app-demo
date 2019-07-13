@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
-import { UpcomingPage } from './upcoming.page';
-import { NgxJsonViewerModule } from 'ngx-json-viewer';
-import { CoreModule } from '../../../core/core.module';
+
+import { SettingsPage } from './settings.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: UpcomingPage
+    component: SettingsPage
   }
 ];
 
@@ -19,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    CoreModule,
-    NgxJsonViewerModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [UpcomingPage]
+  declarations: [SettingsPage]
 })
-export class UpcomingPageModule {}
+export class SettingsPageModule {}

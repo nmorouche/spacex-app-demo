@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Launch } from '../../Models/Launch';
+import { Launch } from '../../models/launch';
 import { LaunchesService } from '../../services/launches.service';
 import { Observable } from 'rxjs';
 

@@ -8,12 +8,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/components/shared.module';
 
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,12 +24,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     NgProgressModule.withConfig({
-        thick: true,
-        color: '#FFC107'
-      }
-    ),
+      thick: true,
+      spinner: false,
+      color: '#FFC107'
+    }),
     NgProgressHttpModule,
-    SharedModule
+    CoreModule
   ],
   providers: [
     StatusBar,
@@ -38,4 +38,4 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot=start>
+      <ion-button shape="round" (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>About</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-item-divider color="dark" sticky="true">
+      <ion-label>
+        API Info
+      </ion-label>
+    </ion-item-divider>
+    <ion-button class="ml-3 mt-2 mb-2" href="https://api.spacexdata.com/v3">
+      https://api.spacexdata.com/v3
+      <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
+    </ion-button>
+
+    <ion-item-divider color="dark" sticky="true">
+      <ion-label>
+        Company Info
+      </ion-label>
+    </ion-item-divider>
+    <ion-button class="ml-3 mt-2 mb-2" href="https://api.spacexdata.com/v3/info">
+      https://api.spacexdata.com/v3/info
+      <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
+    </ion-button>
+
+  </div>
+</ion-content>

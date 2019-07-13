@@ -9,19 +9,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <div *ngIf="upcomingLaunches$ | async as launches; else loading">
     <div *ngFor="let launch of launches">
-      <ion-item-divider color="success" sticky="true">
+      <ion-item-divider color="dark" sticky="true">
         <ion-label>
           {{launch.mission_name}}
         </ion-label>
       </ion-item-divider>
-      <ngx-json-viewer [json]="launch" [expanded]="false"></ngx-json-viewer>
+      <div class="pl-2 pt-2 pb-2">
+        <ngx-json-viewer [json]="launch" [expanded]="false">
+          </ngx-json-viewer>
+      </div>
     </div>
   </div>
+
 </ion-content>
 
 <ng-template #loading>
-  <app-skeleton-loader [text]=20></app-skeleton-loader>
+  <app-lottie-loader></app-lottie-loader>
 </ng-template>

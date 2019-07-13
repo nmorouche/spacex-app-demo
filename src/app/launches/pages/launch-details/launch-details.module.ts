@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { IonicModule } from '@ionic/angular';
 
-import { DetailsPage } from './details.page';
+import { LaunchDetailsPage } from './launch-details.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: DetailsPage
+    component: LaunchDetailsPage
   }
 ];
 
@@ -22,6 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     NgxJsonViewerModule
   ],
-  declarations: [DetailsPage]
+  declarations: [LaunchDetailsPage]
 })
-export class DetailsPageModule {}
+export class LaunchDetailsPageModule {}

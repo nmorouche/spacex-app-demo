@@ -30,23 +30,21 @@
         </div>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
-            <ion-item [routerLink]="[p.url]" routerDirection="root"
-              [class.active-menu-item]="selectedPath?.startsWith(p.url) || (selectedPath === '/' && p.url.startsWith('/launches'))">
+            <ion-item [routerLink]="[p.url]" routerDirection="forward"
+              [class.active-menu-item]="selectedPath?.includes(p.title.toLowerCase())">
               <ion-label>
-                {{ p.title }}
+                {{ p.title }} 
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
 
         <div class="fixed-bottom">
-          <ion-item tappable routerLink="/list" routerDirection="root">
+          <ion-item routerLink="/settings" routerDirection="forward">
             Settings
           </ion-item>
-          <ion-item tappable>
-            <ion-label>
-              About
-            </ion-label>
+          <ion-item [routerLink]="['/about']" routerDirection="forward">
+            About
           </ion-item>
         </div>
       </ion-content>

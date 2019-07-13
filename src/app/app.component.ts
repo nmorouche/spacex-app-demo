@@ -15,17 +15,30 @@ export class AppComponent {
     {
       title: 'Launches',
       url: '/launches/next',
-      icon: 'home'
     },
     {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
+      title: 'Missions',
+      url: '/missions',
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Rockets',
+      url: '/rockets',
+    },
+    {
+      title: 'Payloads',
+      url: '/payloads',
+    },
+    {
+      title: 'Cores',
+      url: '/cores',
+    },
+    {
+      title: 'Pads',
+      url: '/pads',
+    },
+    {
+      title: 'History',
+      url: '/history',
     }
   ];
 

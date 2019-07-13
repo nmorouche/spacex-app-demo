@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { LaunchesPage } from './launches.page';
-import { LaunchResolver } from './resolvers/launch.resolver';
+import { LaunchResolver } from '../resolvers/launch.resolver';
 
 const routes: Routes = [
   {
@@ -27,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        loadChildren: './details/details.module#DetailsPageModule',
+        loadChildren: './launch-details/launch-details.module#LaunchDetailsPageModule',
         resolve: {
           launch : LaunchResolver
         }

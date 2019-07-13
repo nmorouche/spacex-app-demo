@@ -10,16 +10,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ng-container>
+<ion-content>
+  <ng-container *ngIf="pastLaunches$ | async as launches; else lottie_loader">
     <ion-list>
-      <ion-item-sliding *ngFor="let l of pastLaunches$ | async as launches">
+      <ion-item-sliding *ngFor="let l of launches">
         <ion-item-options side="start">
           <ion-item-option>Favorite</ion-item-option>
         </ion-item-options>
         <ion-item [routerLink]="['/launches/', l.flight_number]" routerDirection="forward">
           <ion-thumbnail slot="start">
-            <ion-text *ngIf="!l.links.mission_patch" class="underline-magical">{{l.flight_number}}</ion-text>
             <img *ngIf="l.links.mission_patch" [src]="l.links.mission_patch">
           </ion-thumbnail>
           <ion-label class="d-inline">
@@ -70,4 +69,8 @@
 <ng-template #land_failed let-core="core">
   <ion-button disabled="true" color="danger" expand="block" fill="outline" size="small">
     {{core.landing_vehicle}}</ion-button>
+</ng-template>
+
+<ng-template #lottie_loader>
+  <app-lottie-loader></app-lottie-loader>
 </ng-template>

@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { NextPage } from './next.page';
-import { SharedModule } from 'src/app/shared/components/shared.module';
+import { CoreModule } from '../../../core/core.module';
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    SharedModule
+    CoreModule
   ],
   declarations: [NextPage]
 })

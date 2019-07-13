@@ -1,16 +1,14 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable } from 'rxjs';
-import { Launch } from '../../Models/Launch';
-import { LaunchesService } from '../../services/launches.service';
+import { Launch } from '../../models/launch';
 
 @Component({
   selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  templateUrl: './launch-details.page.html',
+  styleUrls: ['./launch-details.page.scss'],
 })
-export class DetailsPage implements OnInit, AfterViewInit {
+export class LaunchDetailsPage implements OnInit, AfterViewInit {
   launch: Launch;
   missionName: string;
 
@@ -20,8 +18,9 @@ export class DetailsPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    console.log(this.route.snapshot);
     this.launch =  this.route.snapshot.data.launch;
+    console.log('here', this.launch );
+
   }
 
   ngAfterViewInit(): void {
