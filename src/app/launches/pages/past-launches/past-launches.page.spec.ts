@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PastLaunchPage } from './past-launch.page';
+import { PastLaunchesPage } from './past-launches.page';
 
 describe('PastPage', () => {
-  let component: PastLaunchPage;
-  let fixture: ComponentFixture<PastLaunchPage>;
+  let component: PastLaunchesPage;
+  let fixture: ComponentFixture<PastLaunchesPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PastLaunchPage ],
+      declarations: [ PastLaunchesPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PastLaunchPage);
+    fixture = TestBed.createComponent(PastLaunchesPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
