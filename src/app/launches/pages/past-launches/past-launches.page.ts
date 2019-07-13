@@ -4,11 +4,11 @@ import { Launch } from '../../models/launch';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-past',
-  templateUrl: './past.page.html',
-  styleUrls: ['./past.page.scss'],
+  selector: 'app-past-launches',
+  templateUrl: './past-launches.page.html',
+  styleUrls: ['./past-launches.page.scss'],
 })
-export class PastPage implements OnInit, AfterViewInit {
+export class PastLaunchesPage implements OnInit, AfterViewInit {
   pastLaunches$: Observable<Launch[]>;
 
   constructor(private launchesService: LaunchesService) { }
@@ -17,6 +17,6 @@ export class PastPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.pastLaunches$ = this.launchesService.getPastLaunches()
+    this.pastLaunches$ = this.launchesService.getPastLaunches();
   }
 }

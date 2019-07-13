@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { PastPage } from './past.page';
+import { UpcomingLaunchesPage } from './upcoming-launches.page';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { CoreModule } from '../../../core/core.module';
-
 
 const routes: Routes = [
   {
     path: '',
-    component: PastPage
+    component: UpcomingLaunchesPage
   }
 ];
 
@@ -21,7 +21,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     CoreModule,
+    NgxJsonViewerModule
   ],
-  declarations: [PastPage]
+  declarations: [UpcomingLaunchesPage]
 })
-export class PastPageModule {}
+export class UpcomingLaunchesPageModule {}

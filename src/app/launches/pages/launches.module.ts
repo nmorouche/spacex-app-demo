@@ -15,15 +15,15 @@ const routes: Routes = [
     children: [
       {
         path: 'next',
-        loadChildren: './next/next.module#NextPageModule'
+        loadChildren: './next-launches/next-launches.module#NextLaunchesPageModule'
       },
       {
         path: 'upcoming',
-        loadChildren: './upcoming/upcoming.module#UpcomingPageModule'
+        loadChildren: './upcoming-launches/upcoming-launches.module#UpcomingLaunchesPageModule'
       },
       {
         path: 'past',
-        loadChildren: './past/past.module#PastPageModule'
+        loadChildren: './past-launches/past-launches.module#PastLaunchesPageModule'
       },
       {
         path: ':id',

@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.page.html',
-  styleUrls: ['./details.page.scss'],
+  selector: 'app-mission-details',
+  templateUrl: './mission-details.page.html',
+  styleUrls: ['./mission-details.page.scss'],
 })
-export class DetailsPage implements OnInit {
+export class MissionDetailsPage implements OnInit {
   value: string;
 
   constructor(

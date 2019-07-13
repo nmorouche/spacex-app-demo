@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Launch } from '../../models/launch';
 
 @Component({
-  selector: 'app-details',
+  selector: 'app-launch-details',
   templateUrl: './launch-details.page.html',
   styleUrls: ['./launch-details.page.scss'],
 })

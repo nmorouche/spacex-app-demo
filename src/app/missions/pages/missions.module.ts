@@ -18,7 +18,7 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        loadChildren: './details/details.module#DetailsPageModule',
+        loadChildren: './mission-details/mission-details.module#MissionDetailsPageModule',
         resolve: {
           mission: MissionResolver
         }

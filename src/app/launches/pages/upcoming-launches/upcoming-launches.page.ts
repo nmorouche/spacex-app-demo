@@ -4,11 +4,11 @@ import { Launch } from '../../models/launch';
 import { LaunchesService } from '../../services/launches.service';
 
 @Component({
-  selector: 'app-upcoming',
-  templateUrl: './upcoming.page.html',
-  styleUrls: ['./upcoming.page.scss'],
+  selector: 'app-upcoming-launches',
+  templateUrl: './upcoming-launches.page.html',
+  styleUrls: ['./upcoming-launches.page.scss'],
 })
-export class UpcomingPage implements OnInit, AfterViewInit {
+export class UpcomingLaunchesPage implements OnInit, AfterViewInit {
   upcomingLaunches$: Observable<Launch[]>;
 
   constructor(private launchesService: LaunchesService) { }

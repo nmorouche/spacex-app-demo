@@ -1,22 +1,21 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { NextPage } from './next.page';
+import { NextLaunchesPage } from './next-launches.page';
 
 describe('NextPage', () => {
-  let component: NextPage;
-  let fixture: ComponentFixture<NextPage>;
+  let component: NextLaunchesPage;
+  let fixture: ComponentFixture<NextLaunchesPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NextPage ],
+      declarations: [ NextLaunchesPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NextPage);
+    fixture = TestBed.createComponent(NextLaunchesPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
