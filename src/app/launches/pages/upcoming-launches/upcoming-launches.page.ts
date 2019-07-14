@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Launch } from '../../models/launch';
+import { Launch } from '../../models/launch.model';
 import { LaunchesService } from '../../services/launches.service';
 
 @Component({

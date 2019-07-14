@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Launch } from '../../models/launch';
+import { Launch } from '../../models/launch.model';
 
 @Component({
   selector: 'app-launch-details',

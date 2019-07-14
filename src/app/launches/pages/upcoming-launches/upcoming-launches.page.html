@@ -12,14 +12,14 @@
 <ion-content>
   <div *ngIf="upcomingLaunches$ | async as launches; else loading">
     <div *ngFor="let launch of launches">
-      <ion-item-divider color="dark" sticky="true">
+      <ion-item-divider color="warning" sticky="true">
         <ion-label>
           {{launch.mission_name}}
         </ion-label>
       </ion-item-divider>
       <div class="pl-2 pt-2 pb-2">
         <ngx-json-viewer [json]="launch" [expanded]="false">
-          </ngx-json-viewer>
+        </ngx-json-viewer>
       </div>
     </div>
   </div>

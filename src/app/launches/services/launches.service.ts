@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Launch } from '../models/launch';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Launch } from '../models/launch.model';
 
 @Injectable({
   providedIn: 'root'

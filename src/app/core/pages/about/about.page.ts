@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-about',
@@ -8,12 +9,18 @@ import { Location } from '@angular/common';
 })
 export class AboutPage implements OnInit {
 
-  constructor( private location: Location) { }
+  constructor( 
+    private location: Location,
+    private inAppBrowser: InAppBrowser) { }
 
   ngOnInit() {
   }
 
   goBack() {
     this.location.back();
+  }
+
+  openLink(link: string) {
+    this.inAppBrowser.create(link, '_blank');
   }
 }

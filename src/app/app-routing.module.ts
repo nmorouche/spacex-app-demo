@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'missions', loadChildren: './missions/pages/missions.module#MissionsPageModule' },
   { path: 'about', loadChildren: './core/pages/about/about.module#AboutPageModule' },
   { path: 'settings', loadChildren: './core/pages/settings/settings.module#SettingsPageModule' },
+  { path: 'history', loadChildren: './history/pages/historical-events/historical-events.module#HistoricalEventsPageModule' },
 ];
 
 @NgModule({

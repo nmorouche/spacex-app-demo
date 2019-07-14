@@ -14,6 +14,7 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +35,8 @@ import { CoreModule } from './core/core.module';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    InAppBrowser,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
 })
