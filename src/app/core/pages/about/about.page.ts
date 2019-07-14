@@ -21,6 +21,6 @@ export class AboutPage implements OnInit {
   }
 
   openLink(link: string) {
-    this.inAppBrowser.create(link, '_blank');
+    this.inAppBrowser.create(link, '_system');
   }
 }
