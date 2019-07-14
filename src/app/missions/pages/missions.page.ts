@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-missions',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class MissionsPage implements OnInit {
   missionId = 'F3364BF';
 
-  constructor() { }
+  constructor(private inAppBrowser: InAppBrowser) { }
 
   ngOnInit() {
   }
 
+  openLink(link: string) {
+    this.inAppBrowser.create(link, '_system');
+  }
 }
