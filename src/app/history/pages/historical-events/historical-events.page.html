@@ -54,7 +54,7 @@
           </ion-row>
         </div>
         <ion-button *ngIf="event.flight_number" color="success" expand="block" fill="outline" size="small"
-        [routerLink]="['/launches/', event.flight_number]" routerDirection="forward">
+        [routerLink]="['launch/', event.flight_number]" routerDirection="forward">
           Launch
           <ion-icon class="pl-2" name="arrow-forward"></ion-icon>
         </ion-button>

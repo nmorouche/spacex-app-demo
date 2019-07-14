@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { UpcomingLaunchesPage } from './upcoming-launches.page';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
-import { CoreModule } from '../../../core/core.module';
+import { CoreModule } from '../../../app-core/core.module';
 
 const routes: Routes = [
   {

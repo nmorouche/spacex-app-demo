@@ -13,8 +13,8 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CoreModule } from './core/core.module';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { CoreModule } from './app-core/core.module';
 
 @NgModule({
   declarations: [AppComponent],

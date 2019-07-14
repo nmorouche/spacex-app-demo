@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { CoreModule } from '../../../core/core.module';
+import { CoreModule } from '../../../app-core/core.module';
 import { PastLaunchesPage } from './past-launches.page';
 
 const routes: Routes = [

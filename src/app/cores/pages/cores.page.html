@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-icon name="funnel"></ion-icon>
+      <ion-toggle [(ngModel)]="sortChecked" color="success" (ionChange)="sort($event)"></ion-toggle>
+    </ion-buttons>
+    <ion-title>
+      Cores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment scrollable (ionChange)="segmentChanged($event)" [(ngModel)]="segementValue">
+    <ion-segment-button value="ALL">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="PAST">
+      <ion-label>Past</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="UPCOMING">
+      <ion-label>Upcoming</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="cores$ | async as cores">
+    <div *ngFor="let core of cores">
+      <ion-item-divider
+        [color]="(core.status === 'unknown') ? 'medium' : (core.status === 'active') ? 'success' : (core.status === 'inactive') ? 'warning' : 'danger'"
+        sticky="true">
+        <ion-label>
+          {{core.core_serial}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <div class="pl-2 pt-2 pb-2">
+          <ngx-json-viewer [json]="core" [expanded]="false">
+          </ngx-json-viewer>
+        </div>
+      </ion-item>
+      <ion-row padding class="d-flex flex-row-reverse">
+        <ion-button expand="full" class="mr-1" (click)="goToCoreDetails(core)">
+          Details
+          <ion-icon class="pl-3" name="add"></ion-icon>
+        </ion-button>
+        <ion-button expand="full" class="mr-1" [routerLink]="['/launches/', core.missions[0].flight]">
+          Launch
+          <ion-icon class="pl-3" name="arrow-forward"></ion-icon>
+        </ion-button>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

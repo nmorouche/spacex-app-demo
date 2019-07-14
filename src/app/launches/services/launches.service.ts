@@ -11,11 +11,11 @@ export class LaunchesService {
   private apiBaseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.apiBaseUrl = 'https://api.spacexdata.com/v3/';
+    this.apiBaseUrl = 'https://api.spacexdata.com/v3';
   }
 
   getLaunch(flightNumber: string): Observable<Launch> {
-    const requestEndpoint = `${this.apiBaseUrl}launches/${flightNumber}`;
+    const requestEndpoint = `${this.apiBaseUrl}/launches/${flightNumber}`;
     return this.http.get<Launch>(requestEndpoint).pipe(
       map((launch: Launch) => {
         return launch;
@@ -24,7 +24,7 @@ export class LaunchesService {
   }
 
   getPastLaunches(): Observable<Launch[]> {
-    const requestEndpoint = `${this.apiBaseUrl}launches/past?order=desc`;
+    const requestEndpoint = `${this.apiBaseUrl}/launches/past?order=desc`;
     return this.http.get<Launch[]>(requestEndpoint).pipe(
       map((launches: Launch[]) => {
         return launches;
@@ -33,7 +33,7 @@ export class LaunchesService {
   }
 
   getNextLaunch(): Observable<Launch> {
-    const requestEndpoint = `${this.apiBaseUrl}launches/next`;
+    const requestEndpoint = `${this.apiBaseUrl}/launches/next`;
     return this.http.get<Launch>(requestEndpoint).pipe(
       map(missions => {
         return missions;
@@ -42,7 +42,7 @@ export class LaunchesService {
   }
 
   getUpcomingLaunches(): Observable<Launch[]> {
-    const requestEndpoint = `${this.apiBaseUrl}launches/upcoming?order=desc`;
+    const requestEndpoint = `${this.apiBaseUrl}/launches/upcoming?order=desc`;
     return this.http.get<Launch[]>(requestEndpoint).pipe(
       map(missions => {
         return missions;
