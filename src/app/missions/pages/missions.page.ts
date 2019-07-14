@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./missions.page.scss'],
 })
 export class MissionsPage implements OnInit {
+  missionId = 'F3364BF';
 
   constructor() { }
 

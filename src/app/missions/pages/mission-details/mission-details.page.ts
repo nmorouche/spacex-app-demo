@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Mission } from '../../models/mission.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-mission-details',
@@ -8,14 +10,14 @@ import { Location } from '@angular/common';
   styleUrls: ['./mission-details.page.scss'],
 })
 export class MissionDetailsPage implements OnInit {
-  value: string;
+  mission: Mission;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location) { }
 
   ngOnInit() {
-    this.value =  this.route.snapshot.data.mission;
+    this.mission = this.route.snapshot.data.mission;
   }
 
   goBack() {

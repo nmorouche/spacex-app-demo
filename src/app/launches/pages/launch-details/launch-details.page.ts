@@ -19,8 +19,6 @@ export class LaunchDetailsPage implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.launch =  this.route.snapshot.data.launch;
-    console.log('here', this.launch );
-
   }
 
   ngAfterViewInit(): void {

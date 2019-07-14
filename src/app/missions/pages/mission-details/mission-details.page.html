@@ -5,9 +5,12 @@
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>{{value}}</ion-title>
+    <ion-title *ngIf="mission">{{mission.mission_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <ng-container *ngIf="mission">
+        <ngx-json-viewer [json]="mission" [expanded]="false"></ngx-json-viewer>
+      </ng-container>
 </ion-content>
