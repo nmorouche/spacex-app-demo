@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-buttons slot="end">
         <ion-icon name="funnel"></ion-icon>
-      <ion-toggle [(ngModel)]="sortChecked" color="success" (ionChange)="sort($event)"></ion-toggle>
+      <ion-toggle [(ngModel)]="sortChecked"  mode ="md" color="success" (ionChange)="sort($event)"></ion-toggle>
     </ion-buttons>
     <ion-title>
       Cores
@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-segment scrollable (ionChange)="segmentChanged($event)" [(ngModel)]="segementValue">
+  <ion-segment scrollable padding (ionChange)="segmentChanged($event)" [(ngModel)]="segementValue">
     <ion-segment-button value="ALL">
       <ion-label>All</ion-label>
     </ion-segment-button>
