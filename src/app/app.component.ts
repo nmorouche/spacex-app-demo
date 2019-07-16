@@ -11,6 +11,16 @@ import { Router, RouterEvent } from '@angular/router';
 })
 export class AppComponent {
   selectedPath: string;
+  text: any = {
+    Year: 'Y',
+    Month: 'M',
+    Weeks: 'W',
+    Days: 'D',
+    Hours: 'H',
+    Minutes: 'M',
+    Seconds: 'S',
+    MilliSeconds: 'MilliSeconds'
+  };
   public pages = [
     {
       title: 'Launches',

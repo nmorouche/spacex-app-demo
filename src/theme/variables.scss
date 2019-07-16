@@ -1,9 +1,10 @@
 /** Ionic CSS Variables **/
 :root {
-  --ion-font-family: 'Roboto';
+  --ion-font-family: 'DinoFont';
   // --ion-background-color: #303030;
   // --ion-text-color: #ffffff;
-   /** primary **/
+
+  /** primary **/
    --ion-color-primary: #303F9F;
    --ion-color-primary-rgb: 48,63,159;
    --ion-color-primary-contrast: #ffffff;
@@ -81,6 +82,5 @@
   font-family: 'DinoFont';
   font-style: normal;
   font-weight: normal;
-  font-size: 9px;
   src: url('../assets/fonts/PFDinMono.ttf');
 }

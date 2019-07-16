@@ -9,6 +9,7 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
+        <!-- Next launch -->
         <div *ngIf="false">
           <ion-card>
             <ion-card-header>
@@ -33,7 +34,7 @@
             <ion-item [routerLink]="[p.url]" routerDirection="forward"
               [class.active-menu-item]="selectedPath?.includes(p.title.toLowerCase())">
               <ion-label>
-                {{ p.title }} 
+                {{ p.title }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -45,6 +46,9 @@
           </ion-item>
           <ion-item [routerLink]="['/about']" routerDirection="forward">
             About
+          </ion-item>
+          <ion-item>
+            <ion-badge color="danger">v 1.0.0 - dev</ion-badge>
           </ion-item>
         </div>
       </ion-content>

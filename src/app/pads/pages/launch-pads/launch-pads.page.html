@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Launch pads
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="launchPads$ | async as launchPads">
+    <ion-item *ngFor="let pad of launchPads"
+      [ngClass]="{'active-pad': pad.status === 'active', 'retired-pad': pad.status === 'retired', 'under-construction-pad': pad.status === 'under construction'}">
+      <ion-label class="d-inline">
+        <h2>{{pad.site_name_long}}</h2>
+        <p class="ion-text-wrap">{{pad.details}}</p>
+      </ion-label>
+      <ion-note slot="end" class="d-none d-md-block align-self-center">
+        <ion-row>
+          Attempted launches: {{pad.attempted_launches}}
+        </ion-row>
+        <ion-row>
+          Successful launches : {{pad.successful_launches}}
+        </ion-row>
+        <ion-row *ngFor="let rocket of pad.vehicles_launched">
+          <ion-badge class="mt-2" color="primary">{{rocket}}</ion-badge>
+        </ion-row>
+      </ion-note>
+    </ion-item>
+  </div>
+</ion-content>
