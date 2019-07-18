@@ -1,16 +1,19 @@
 /** Ionic CSS Variables **/
+.card-content-md p {
+  font-size: 10px;
+}
 :root {
   --ion-font-family: 'DinoFont';
   // --ion-background-color: #303030;
-  // --ion-text-color: #ffffff;
+  --ion-text-size: 1px;
 
   /** primary **/
-   --ion-color-primary: #303F9F;
+   --ion-color-primary: #FF9730;
    --ion-color-primary-rgb: 48,63,159;
-   --ion-color-primary-contrast: #ffffff;
+   --ion-color-primary-contrast: #000000;
    --ion-color-primary-contrast-rgb: 255,255,255;
-   --ion-color-primary-shade: #2a378c;
-   --ion-color-primary-tint: #4552a9;
+   --ion-color-primary-shade: #E3872C;
+   --ion-color-primary-tint: #E3872C;
  
    /** secondary **/
    --ion-color-secondary: #3F51B5;
@@ -82,5 +85,5 @@
   font-family: 'DinoFont';
   font-style: normal;
   font-weight: normal;
-  src: url('../assets/fonts/PFDinMono.ttf');
+  src: url('../assets/fonts/future.ttf');
 }
