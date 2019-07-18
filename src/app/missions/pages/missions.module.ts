@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { MissionsPage } from './missions.page';
 import { MissionResolver } from '../resolvers/mission.resolver';
+import { CoreModule } from 'src/app/app-core/core.module';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
+
 
 const routes: Routes = [
   {
@@ -32,7 +35,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CoreModule,
+    NgxJsonViewerModule
   ],
   declarations: [MissionsPage]
 })

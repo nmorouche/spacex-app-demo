@@ -10,27 +10,26 @@
 </ion-header>
 
 <ion-content>
-  <ion-item-divider color="warning" sticky="true">
-    <ion-label>
-      Missions
-    </ion-label>
-      <div *ngIf="missions">
+  <ion-item-divider sticky="true">
+      <ng-container *ngIf="missions else loading">
           <ion-list>
             <ion-item-sliding *ngFor="let m of missions">
-              <ion-item-options side="start">
-                <ion-item-option>Favorite</ion-item-option>
-              </ion-item-options>
-              <ion-item (click)="showAlert(m)">
-                <ion-thumbnail slot="start">
-                </ion-thumbnail>
+              <ion-item button [routerLink]="['/missions/', m.mission_id]" routerDirection="forward">
+                  <ion-thumbnail slot="start">
+                      <img src="../assets/badr.jpeg">
+                  </ion-thumbnail>
                 <ion-label class="d-inline">
-                  <h2>{{m.mission_name}}</h2>
-                  <p>{{m.mission_id}}</p>
-                  <p>{{m.wikipedia}}</p>
+                  <h2 class="note_title">{{m.mission_name}}</h2>
+                  <p class="note_content">{{m.mission_id}}</p>
+                  <p class="note_content">{{m.wikipedia}}</p>
                 </ion-label>
               </ion-item>
             </ion-item-sliding>
           </ion-list>
-        </div>
+      </ng-container>
   </ion-item-divider>
 </ion-content>
+
+<ng-template #loading>
+    <app-lottie-loader></app-lottie-loader>
+</ng-template>
