@@ -14,6 +14,15 @@ export class MissionsService {
     this.apiBaseUrl = 'https://api.spacexdata.com/v3';
   }
 
+  getAllMissions(): Observable<Mission[]> {
+    const requestEndpoint = this.apiBaseUrl + '/missions';
+    return this.http.get<Mission[]>(requestEndpoint).pipe(
+      map(missions => {
+        return missions;
+      })
+    );
+  }
+
   getMission(missionId: string): Observable<Mission> {
     const requestEndpoint = `${this.apiBaseUrl}/missions/${missionId}`;
     return this.http.get<Mission>(requestEndpoint).pipe(

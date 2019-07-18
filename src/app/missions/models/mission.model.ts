@@ -8,4 +8,3 @@ export interface Mission {
     twitter: string;
     description: string;
 }
-

@@ -10,19 +10,26 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="upcomingLaunches$ | async as launches; else loading">
-    <div *ngFor="let launch of launches">
-      <ion-item-divider color="warning" sticky="true">
-        <ion-label>
-          {{launch.mission_name}}
-        </ion-label>
-      </ion-item-divider>
-      <div class="pl-2 pt-2 pb-2">
-        <ngx-json-viewer [json]="launch" [expanded]="false">
-        </ngx-json-viewer>
-      </div>
-    </div>
-  </div>
+  <ng-container *ngIf="upcomingLaunches$ | async as launches; else lottie_loader">
+    <ion-list>
+      <ion-item-sliding *ngFor="let l of launches">
+        <ion-item-options side="start">
+          <ion-item-option>Favorite</ion-item-option>
+        </ion-item-options>
+        <ion-item [routerLink]="['/launches/', l.flight_number]" routerDirection="forward">
+          <ion-thumbnail slot="start">
+            <img src="../assets/yes.png">
+          </ion-thumbnail>
+          <ion-label class="d-inline">
+            <h2>{{l.mission_name}}</h2>
+            <p> {{l.launch_date_utc | date : 'medium'}} UTC</p>
+            <p>{{l.launch_site.site_name}}</p>
+            <p>{{l.rocket.rocket_name}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ng-container>
 </ion-content>
 
 <ng-template #loading>
